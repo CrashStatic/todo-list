@@ -2,44 +2,31 @@ import { ToDoListItem } from "./ToDoListItem/ToDoListItem";
 import './ToDoList.scss';
 import { ToDo } from "../../models/todo-item";
 
-export const ToDoList = () => {
-    const todos: ToDo[] = [
-        {
-            id: 0,
-            text: 'Первая задача',
-            isDone: false
-        },
-        {
-            id: 1,
-            text: 'Вторая задача',
-            isDone: true
-        },
-        {
-            id: 2,
-            text: 'Третья задача',
-            isDone: true
-        },
-        {
-            id: 3,
-            text: 'Четвертая задача',
-            isDone: false
-        }
-    ]
-
+export const ToDoList = (props: { todos: ToDo[], updateToDo: Function, deleteToDo: Function }) => {
     const checkedList = () => {
-        return todos
+        return props.todos
         .filter((item) => !item.isDone)
-        .map((item, idx) => {
-            return <ToDoListItem toDoItem={item} key={idx} />
-        })
+            .map((item, idx) => {
+                return <ToDoListItem
+                    toDoItem={item}
+                    key={idx}
+                    updateToDo={props.updateToDo}
+                    deleteToDo={props.deleteToDo}
+                />
+            })
     }
 
     const unCheckedList = () => {
-        return todos
+        return props.todos
         .filter((item) => item.isDone)
-        .map((item, idx) => {
-            return <ToDoListItem toDoItem={item} key={idx} />
-        })
+            .map((item, idx) => {
+                return <ToDoListItem
+                    toDoItem={item}
+                    key={idx}
+                    updateToDo={props.updateToDo}
+                    deleteToDo={props.deleteToDo}
+                />
+            })
     }
 
     return (
