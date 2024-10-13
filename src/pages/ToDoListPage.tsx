@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 
 export const ToDoListPage = () => {
     const [todos, setTodos] = useState<ToDo[]>([]);
-    
+
     const createNewToDo = (text: string) => {
         const newToDo: ToDo = {
             id: todos.length,
@@ -16,11 +16,21 @@ export const ToDoListPage = () => {
             isDone: false
         }
         setTodos([...todos, newToDo])
+        toast(`Задача ${text} добавлена`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
     }
 
     const updateToDo = (toDoItem: ToDo) => {
         const newTodos = todos.map((todo) => {
-            if(todo.id === toDoItem.id) {
+            if (todo.id === toDoItem.id) {
                 todo.isDone = !todo.isDone;
             }
             return todo;
@@ -35,7 +45,7 @@ export const ToDoListPage = () => {
             draggable: true,
             progress: undefined,
             theme: "light",
-            });
+        });
     }
 
     const deleteToDo = (toDoItem: ToDo) => {
@@ -50,14 +60,14 @@ export const ToDoListPage = () => {
             draggable: true,
             progress: undefined,
             theme: "light",
-            });
+        });
     }
 
     return (
         <>
             <Header />
-            <Form createNewToDo={ createNewToDo } />
-            <ToDoList todos={todos} updateToDo={ updateToDo } deleteToDo={ deleteToDo } />
+            <Form createNewToDo={createNewToDo} />
+            <ToDoList todos={todos} updateToDo={updateToDo} deleteToDo={deleteToDo} />
         </>
     )
 }

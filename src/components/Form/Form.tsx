@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Form.scss';
 
@@ -10,7 +9,6 @@ export const Form = (props: { createNewToDo: Function }) => {
         if (text) {
             props.createNewToDo(text);
             setText('');
-            toast.success('Добавлена новая задача');
         }
     }
 
@@ -22,18 +20,6 @@ export const Form = (props: { createNewToDo: Function }) => {
                     <button></button>
                 </label>
             </form>
-            <ToastContainer
-                position="bottom-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-            />
         </div>
     )
 }
