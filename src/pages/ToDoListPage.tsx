@@ -3,6 +3,8 @@ import { Form } from "../components/Form/Form"
 import { Header } from "../components/Header/Header"
 import { ToDoList } from "../components/ToDoList/ToDoList"
 import { ToDo } from "../models/todo-item"
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 export const ToDoListPage = () => {
     const [todos, setTodos] = useState<ToDo[]>([]);
@@ -24,11 +26,31 @@ export const ToDoListPage = () => {
             return todo;
         })
         setTodos(newTodos);
+        toast(`Задача ${toDoItem.text} изменена`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
     }
 
     const deleteToDo = (toDoItem: ToDo) => {
         const newTodos = todos.filter((todo) => todo.id !== toDoItem.id);
         setTodos(newTodos);
+        toast(`Задача ${toDoItem.text} удалена`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
     }
 
     return (
