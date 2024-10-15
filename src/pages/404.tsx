@@ -1,14 +1,13 @@
-import { Link } from "react-router-dom"
-import classes from './404.module.scss';
+import { NotFoundContainer, NotFoundDescription, NotFoundLink, NotFoundTitle, NotFoundWrapper } from "./404.styled";
 
 export const NotFound = () => {
     return (
-        <div className="container">
-            <h1>Not Found</h1>
-            <div>
-                <p className={classes.description}>Осавь надежу всяк сюда входящий... И вернись назад, путник!</p>
-            </div>
-            <Link to="/" className={classes.link}>To home</Link>
-        </div>
+        <NotFoundContainer>
+            <NotFoundTitle>Not Found</NotFoundTitle>
+            <NotFoundWrapper>
+                <NotFoundDescription>Осавь надежу всяк сюда входящий... И вернись назад, путник!</NotFoundDescription>
+            </NotFoundWrapper>
+            <NotFoundLink to="/">To home</NotFoundLink>
+        </NotFoundContainer>
     )
 }

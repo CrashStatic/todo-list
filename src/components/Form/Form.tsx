@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-import './Form.scss';
+import { FormWrapper, FormBlock, FormLabel, FormField, FormControl } from './Form.styled';
+
+import plusIcon from '../../assets/images/plus.png';
 
 export const Form = (props: { createNewToDo: Function }) => {
     const [text, setText] = useState<string>('');
@@ -15,13 +17,13 @@ export const Form = (props: { createNewToDo: Function }) => {
     }
 
     return (
-        <div className="form-wrapper">
-            <form action="#" onSubmit={formSumbit}>
-                <label>
-                    <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
-                    <button></button>
-                </label>
-            </form>
-        </div>
+        <FormWrapper>
+            <FormBlock action="#" onSubmit={formSumbit}>
+                <FormLabel>
+                    <FormField type="text" value={text} onChange={(e) => setText(e.target.value)} />
+                    <FormControl icon={plusIcon}/>
+                </FormLabel>
+            </FormBlock>
+        </FormWrapper>
     )
 }
