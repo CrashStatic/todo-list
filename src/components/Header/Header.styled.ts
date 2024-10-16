@@ -23,30 +23,9 @@ export const HeaderWrapper = styled.div`
 export const HeaderNavLink = styled(NavLink)`
     text-decoration: none;
     padding: 10px;
-    color: ${(props) => props["aria-current"] === "page" ? "#fff" : "#ffffff33"};
+    color: #ffffff33;
 
-    // .active {
-    // color: #ffffff33;
-    // }
+    &.active {
+    color: #fff;
+    }
 `
-
-// const activeClassName = 'nav-item-active'
-
-// export const HeaderNavLink = styled(NavLink).attrs({
-//     activeClassName,
-//   })
-
-//     &.${activeClassName} {
-//       color: #ffffff33;
-//     }
-//   `
-
-//  export const HeaderNavLink = styled(NavLink)<{activeClassName: string}>`
-//    text-decoration: none;
-//     padding: 10px;
-//     color: #fff;
-
-//   &.${props => props.activeClassName} {
-//     color: #ffffff33;
-//   }
-// `;
