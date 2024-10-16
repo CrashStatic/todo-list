@@ -14,11 +14,19 @@ export const ToDoListContainer = styled.div`
 `
 
 export const ToDoFailedList = styled(ToDoList)`
-    $:empty:after {
+    &:empty:after {
         content: 'Нет задач на выполнение';
     }
-    
+
     &:after {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    }
+    
+    &:before {
     width: 100%;
     display: block;
     text-align: center;
