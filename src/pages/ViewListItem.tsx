@@ -16,7 +16,7 @@ export const ViewListItem = () => {
         if (searchTodo) {
             setTodo(searchTodo)
         } else {
-            navigate('/app/404')
+            navigate('/todo-list/404')
         }
     }, [todoList, id, navigate])
 
