@@ -18,9 +18,9 @@ export const Form = (props: { createNewToDo: Function }) => {
 
     return (
         <FormWrapper>
-            <FormBlock action="#" onSubmit={formSumbit}>
+            <FormBlock action='#' onSubmit={formSumbit}>
                 <FormLabel>
-                    <FormField type="text" value={text} onChange={(e) => setText(e.target.value)} />
+                    <FormField type='text' value={text} onChange={(e) => setText(e.target.value)} />
                     <FormControl icon={plusIcon}/>
                 </FormLabel>
             </FormBlock>

@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import normalize from "styled-normalize";
+import { createGlobalStyle } from 'styled-components';
+import normalize from 'styled-normalize';
 
 export const GlobalStyle = createGlobalStyle`
     ${normalize}
@@ -9,7 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-    background-color: #edf0f1;
+    transition: background-color 0.2s;
+    background-color: ${(props) => props.theme.colors.backgroundSecondary};
     padding: 50px 0 0 0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;

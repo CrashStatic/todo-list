@@ -1,4 +1,4 @@
-import { NotFoundContainer, NotFoundDescription, NotFoundLink, NotFoundTitle, NotFoundWrapper } from "./404.styled";
+import { NotFoundContainer, NotFoundDescription, NotFoundLink, NotFoundTitle, NotFoundWrapper } from './404.styled';
 
 export const NotFound = () => {
     return (
@@ -7,7 +7,7 @@ export const NotFound = () => {
             <NotFoundWrapper>
                 <NotFoundDescription>Осавь надежу всяк сюда входящий... И вернись назад, путник!</NotFoundDescription>
             </NotFoundWrapper>
-            <NotFoundLink to="/">To home</NotFoundLink>
+            <NotFoundLink to='/'>To home</NotFoundLink>
         </NotFoundContainer>
     )
 }

@@ -1,5 +1,5 @@
-import { ToDo } from "../../models/todo-item"
-import { ListItemLink } from "./ListItem.styled"
+import { ToDo } from '../../models/todo-item'
+import { ListItemLink } from './ListItem.styled'
 
 export const ListItem = ({ todo }: { todo: ToDo }) => {
     return (

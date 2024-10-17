@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
-import { ToDo } from "../models/todo-item"
-import { useNavigate, useParams } from "react-router-dom"
-import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { useEffect, useState } from 'react'
+import { ToDo } from '../models/todo-item'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
 export const ViewListItem = () => {
     const { id } = useParams();
@@ -21,7 +21,7 @@ export const ViewListItem = () => {
     }, [todoList, id, navigate])
 
     return (
-        <div className="container">
+        <div className='container'>
             <h1>{todo?.text}</h1>
         </div>
     )

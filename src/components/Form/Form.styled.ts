@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const FormWrapper = styled.div`
     width: 100%;
@@ -8,7 +8,8 @@ export const FormWrapper = styled.div`
     padding: 15px;
     z-index: 5;
 
-    background-color: #4682b4;
+    transparent: background-color 0.2s;
+    background-color: ${(props) => props.theme.colors.backgroundPrimary};
     box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
